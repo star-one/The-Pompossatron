@@ -28,6 +28,7 @@ include_once($ServerPath);
   background-color: #eee;
   border: 1px solid #222;
   padding: 0.25em;
+  margin: 1em 0.75em;
 }
 
     .ql-editor p { margin-bottom: 1em; font-size: 1.2em; line-height: 1.5em;}
@@ -52,10 +53,24 @@ function strip(html)
     For the time being this is just a proof of concept and works as a bit of a blunt instrument. I'll refine it if people like it.
   </p>
 <div class="row">
-  <div class="col-lg-2"> 
+  <div class="col-lg-2">
+    <p>
+      Stuff to do:
+    </p>
+    <ul>
+      <li>Fix bug that sometimes there's no text passed to be spoken,</li>
+      <li>Fix text that's displayed during speech,</li>
+      <li>Make the wordlist case insensitive,</li>
+      <li>Improve the formatting in the editor of pasted text,</li>
+      <li>Tweak the wordlist,</li>
+      <li>Consider switching to check-as-you-type,</li>
+      <li>Consider also checking for Basic English wordlist compliance,</li>
+      <li>Graphs,</li>
+      <li>Ongoing UI tweaks.</li>
+    </ul>
   </div>
   <div class="col-lg-8">
-      <div id="speechPlayer">Read this text aloud<br /><button id="play">▶️</button><button id="pause" disabled>⏸️</button><button id="stop" disabled>⏹️</button></div>
+      <div id="speechPlayer"><button id="play">▶️</button><button id="pause" disabled>⏸️</button><button id="stop" disabled>⏹️</button> Read this text aloud &mdash; <strong><?=$numWords;?></strong> words</div>
   <div id="form-container" class="container">
   <form action="." id="theText" method="post">
  <div id="editor-container">
